@@ -42,8 +42,14 @@
         @viteReactRefresh
         @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
         @inertiaHead
+
+        <style>
+        .scroll-bar::-webkit-scrollbar {
+            display: none; /* Hides the scrollbar */
+        }
+        </style>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased scroll-bar">
         @inertia
     </body>
 </html>
