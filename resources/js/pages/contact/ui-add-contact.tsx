@@ -72,11 +72,14 @@ export default function AddContact({ onClose }: AddContactProps) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-all duration-300">
-            <div className="w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-100">
-                <div className="flex justify-between items-center p-6 border-b border-gray-100">
+            {/* Tambahan: max-h-[90vh] dan flex-col agar modal tidak melebihi tinggi layar HP & bisa di-scroll internal */}
+            <div className="w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-100 flex flex-col max-h-[90vh]">
+                
+                {/* Header (Fixed di atas) */}
+                <div className="flex-none flex justify-between items-center p-5 md:p-6 border-b border-gray-100 bg-white z-10">
                     <div>
-                        <h2 className="text-xl font-bold tracking-tight text-gray-900">Tambah Kontak Baru</h2>
-                        <p className="text-sm text-gray-500 mt-1">Isi informasi detail kontak di bawah ini.</p>
+                        <h2 className="text-lg md:text-xl font-bold tracking-tight text-gray-900">Tambah Kontak Baru</h2>
+                        <p className="text-xs md:text-sm text-gray-500 mt-1">Isi informasi detail kontak di bawah ini.</p>
                     </div>
                     <button onClick={onClose} className="cursor-pointer p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -85,8 +88,8 @@ export default function AddContact({ onClose }: AddContactProps) {
                     </button>
                 </div>
 
-                <form onSubmit={handleSubmit} action="">
-                    <div className="p-6 space-y-5">
+                <form onSubmit={handleSubmit} className="flex flex-col flex-1 overflow-hidden">
+                    <div className="flex-1 overflow-y-auto p-5 md:p-6 space-y-4 md:space-y-5">
                         <div className="space-y-2">
                             <label className="text-sm font-semibold text-gray-700">Nama Lengkap</label>
                             <input
@@ -98,7 +101,7 @@ export default function AddContact({ onClose }: AddContactProps) {
                             />
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                             <div className="space-y-2">
                                 <label className="text-sm font-semibold text-gray-700">Email</label>
                                 <input
@@ -143,12 +146,19 @@ export default function AddContact({ onClose }: AddContactProps) {
                             ></textarea>
                         </div>
                     </div>
-                    <div className="p-6 border-t border-gray-100 flex flex-col-reverse md:flex-row justify-end gap-3 bg-gray-50/50">
-                        <div onClick={onClose} className="cursor-pointer px-6 py-2.5 text-sm font-semibold text-gray-600 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 hover:text-gray-800 transition-all">
+
+                    <div className="flex-none p-5 md:p-6 border-t border-gray-100 flex flex-col-reverse md:flex-row justify-end gap-3 bg-gray-50/50">
+                        <div 
+                            onClick={onClose} 
+                            className="cursor-pointer w-full md:w-auto px-6 py-2.5 text-sm font-semibold text-gray-600 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 hover:text-gray-800 transition-all text-center"
+                        >
                             Batal
                         </div>
 
-                        <button type="submit" className="cursor-pointer px-6 py-2.5 text-sm font-bold text-white bg-[#fb8500] rounded-xl shadow-md shadow-orange-500/20 hover:bg-[#e07a00] hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all">
+                        <button 
+                            type="submit" 
+                            className="cursor-pointer w-full md:w-auto px-6 py-2.5 text-sm font-bold text-white bg-[#fb8500] rounded-xl shadow-md shadow-orange-500/20 hover:bg-[#e07a00] hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all text-center"
+                        >
                             Simpan Kontak
                         </button>
                     </div>

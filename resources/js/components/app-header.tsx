@@ -7,7 +7,7 @@ interface HeaderProps {
 export default function AppHeader({ onClick }: HeaderProps) {
     return (
         <StrictMode>
-            <section className="mt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 p-6 md:p-8 border border-gray-200 rounded-2xl shadow-sm shadow-gray-200/50 mb-8 bg-white transition-all">
+            <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 p-6 md:p-8 border border-gray-200 rounded-2xl shadow-sm shadow-gray-200/50 mb-8 bg-white transition-all">
                 <div className="flex flex-col gap-3 max-w-2xl">
                     <div className="flex flex-wrap gap-2">
                         <span className="inline-flex items-center rounded-full bg-pink-50 px-2.5 py-0.5 text-xs font-semibold text-pink-600 ring-1 ring-inset ring-pink-500/10">

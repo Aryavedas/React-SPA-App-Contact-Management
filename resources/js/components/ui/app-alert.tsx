@@ -31,7 +31,7 @@ export default function Allert({ type = "success", title, message, visible = fal
     const isSuccess = type === "success";
 
     // Ganti style dasar ke Dark Mode
-    const baseCardClass = "z-[999] absolute mt-14 -mr-3 right-0 top-[540px] w-80 bg-gray-800 rounded-lg shadow-lg border border-gray-700 overflow-hidden flex p-4 gap-3";
+    const baseCardClass = "z-[999] absolute mt-5 lg:mt-14 -mr-3 right-0 top-[540px] w-80 bg-gray-800 rounded-lg shadow-lg border border-gray-700 overflow-hidden flex p-4 gap-3";
 
     const accentClass = isSuccess
         ? "border-l-4 border-l-green-500"

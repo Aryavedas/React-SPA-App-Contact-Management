@@ -11,7 +11,7 @@ export default function AppLayout({ children }: AppLayout) {
     return (
         <StrictMode>
             {/* <main className="pt-4 pb-20 min-h-screen w-full px-[79px] bg-gradient-to-tl from-cyan-100 to-cyan-500 text-slate-800"> */}
-            <main className="pt-4 pb-20 min-h-screen w-full px-[79px]">
+            <main className="pt-2 lg:pt-4 pb-20 min-h-screen bg-white w-full text-slate-800 lg:px-[79px] px-2">
                 <div
                     className={`fixed right-6 top-6 z-[9999] transition-all duration-500 ${node ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
                     {node}

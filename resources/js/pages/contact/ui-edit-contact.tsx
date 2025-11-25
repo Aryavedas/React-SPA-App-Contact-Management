@@ -80,7 +80,7 @@ export default function EditContact({ id, onClose }: EditContactProps) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-all duration-300">
-            <div className="w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-100">
+            <div className="w-full flex flex-col max-h-[90vh] max-w-lg bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-100">
                 <div className="flex justify-between items-center p-6 border-b border-gray-100">
                     <div>
                         <h2 className="text-xl font-bold tracking-tight text-gray-900">Edit Kontak</h2>
@@ -93,8 +93,8 @@ export default function EditContact({ id, onClose }: EditContactProps) {
                     </button>
                 </div>
 
-                <form onSubmit={handleEditSubmit} action="">
-                    <div className="p-6 space-y-5">
+                <form className='flex flex-col flex-1 overflow-hidden' onSubmit={handleEditSubmit} action="">
+                    <div className="p-6 space-y-5 overflow-y-auto flex-1">
                         <div className="space-y-2">
                             <label className="text-sm font-semibold text-gray-700">Nama Lengkap</label>
                             <input
@@ -151,7 +151,7 @@ export default function EditContact({ id, onClose }: EditContactProps) {
                             ></textarea>
                         </div>
                     </div>
-                    <div className="p-6 border-t border-gray-100 flex flex-col-reverse md:flex-row justify-end gap-3 bg-gray-50/50">
+                    <div className="text-center p-6 border-t border-gray-100 flex flex-col-reverse md:flex-row justify-end gap-3 bg-gray-50/50">
                         <div onClick={onClose} className="cursor-pointer px-6 py-2.5 text-sm font-semibold text-gray-600 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 hover:text-gray-800 transition-all">
                             Batal
                         </div>
